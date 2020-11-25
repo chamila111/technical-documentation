@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> TechnicalDocument</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!--  <h1>new features in ES6</h1>
+  <hr>-->
+  <div class="layout">
+    <div class="nav">
+      <h1> new in ES6 </h1>
+      <p>javascript</p>
+      <nav id="navbar">
+        <li><a href="#let">let</a></li>
+        <li><a href="#const">const</a></li>
+        <li><a href="#arrow_functions">arrow functions</a></li>
+        <li><a href="#default_parameter">default parameter values</a></li>
+        <li><a href="#function_rest_parameter">function rest parameter</a></li>
+        <li><a href="#Array_find">array.find()</a></li>
+        <li><a href="#number_properties">number properties</a></li>
+        <li><a href="#classes">javascript classes</a></li>
+        <li><a href="#promises">javascript promises</a></li>
+        <li><a href="#reference">reference</a></li>
+
+      </nav>
+    </div>
+    <main id="main-doc">
+      <!--first-->
+      <section class="mainsection" id="let">
+        <header>javaScript let</header>
+        <p> The let keyword allows you to declare a variable with block scope.</p>
+        <pre>
+        <code>
+          var x = 10;
+          // Here x is 10
+          {
+          let x = 2;
+          // Here x is 2
+          }
+          // Here x is 10
+
+        </code>
+        </pre>
+      </section>
+
+
+
+      <!--second-->
+      <section class="mainsection" id="const">
+        <header>javaScript const</header>
+        <p>The const keyword allows you to declare a constant (a JavaScript variable with a constant value).
+
+          Constants are similar to let variables, except that the value cannot be changed.</p>
+        <pre>
+          <code>
+            var x = 10;
+// Here x is 10
+{
+  const x = 2;
+  // Here x is 2
+}
+// Here x is 10
+
+          </code>
+        </pre>
+      </section>
+      <!--third-->
+      <section class="mainsection" id="arrow_functions">
+        <header>arrow functions</header>
+        <p> Arrow functions allows a short syntax for writing function expressions.
+
+          You don't need the <mark>function</mark> keyword, the <mark>return</mark> keyword, and the curly brackets.</p>
+        <p> Arrow functions do not have their own <mark>this</mark>. They are not well suited for defining object methods.
+
+          Arrow functions are not hoisted. They must be defined before they are used.
+
+          Using <mark>const</mark> is safer than using var, because a function expression is always a constant value.
+
+          You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:
+
+          Example</p>
+        <pre>
+            <code> // ES5
+var x = function(x, y) {
+   return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+</code>
+</pre>
+
+      </section>
+      <!--fourth-->
+      <section class="mainsection" id="default_parameter">
+        <header>default parameter values</header>
+        <p> ES6 allows function parameters to have default values.
+
+        </p>
+        <pre>
+              <code> function myFunction(x, y = 10) {
+  // y is 10 if not passed or undefined
+  return x + y;
+}
+myFunction(5); // will return 15</code>
+            </pre>
+      </section>
+      <!--fifth-->
+      <section class="mainsection" id="function_rest_parameter">
+        <header>function rest parameter</header>
+        <p> The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:</p>
+        <pre>
+          <code> function sum(...args) {
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77);</code>
+        </pre>
+      </section>
+      <!--sixth-->
+      <section class="mainsection" id="Array_find">
+        <header>array.find()</header>
+        <p> The <mark>find()</mark> method returns the value of the first array element that passes a test function.
+
+          This example finds (returns the value of ) the first element that is larger than 18:</p>
+        <pre>
+            <code> var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}</code>
+          </pre>
+      </section>
+      <!--seventh-->
+      <section class="mainsection" id="number_properties">
+        <header>new number properties</header>
+        <p>ES6 added the following properties to the number object</p>
+        <ul>
+          <li>EPSILON</li>
+          <li>MIN_SAFE_INTEGER</li>
+          <li>MAX_SAFR_INTEGER</li>
+        </ul>
+
+
+
+      </section>
+      <!--eighth-->
+      <section id="classes" class="mainsection">
+        <header>javascript classes</header>
+        <p> JavaScript Classes are templates for JavaScript Objects.
+
+          Use the keyword class to create a class.
+
+          Always add a method named constructor():</p>
+      </section>
+      <!--ninth-->
+      <section class="mainsection" id="promises">
+        <header>javascript promises</header>
+        <p> A Promise is a JavaScript object that links "Producing Code" and "Consuming Code".
+
+          "Producing Code" can take some time and "Consuming Code" must wait for the result.</p>
+        <pre>
+  <code>
+    let myPromise = new Promise(function(myResolve, myReject) {
+// "Producing Code" (May take some time)
+
+  myResolve(); // when successful
+  myReject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise).
+myPromise.then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+    </code>
+  </pre>
+      </section>
+      <!--tenth-->
+      <sectio id="reference" class="mainsection">
+        <header>reference</header>
+        <p>All the documentation in this page is taken from <a href="https://www.w3schools.com/js/js_es6.asp">w3schools</a></p>
+      </sectio>
+
+
+
+
+
+    </main>
+  </div>
+</body>
+
+</html>
